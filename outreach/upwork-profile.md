@@ -74,8 +74,10 @@ redacted sample) and I'll tell you what I'd audit first, free.
 
 1. **Claim-Auditor** — the deterministic auditor itself (link the repo + the
    `services/ai-code-audit.html` page as the "service" URL).
-2. **A sample audit report** — run Claim-Auditor on a public repo (or one of
-   your own demos with a planted false claim) and export the PASS/FAIL report
-   as the portfolio artifact. This is your single strongest proof.
+2. **A sample audit report** — already built and live:
+   `https://liquitex-coder.github.io/services/sample-audit-report.html`
+   (a real Claim-Auditor run catching a planted false-claim commit, with raw
+   SARIF/JSON evidence). This is your single strongest proof — attach it and
+   link it in every proposal.
 3. **ML-Price-Optimize / ml-churn-recommend** — shows you also build, not just
    audit (useful when the gig drifts into "can you also fix it").

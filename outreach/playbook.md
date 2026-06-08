@@ -54,17 +54,21 @@ fast, refundable-feeling** offer:
 Low downside for them = easy yes. Your real ROI is the review + the regression
 case for Auditor.
 
-## 4. The one artifact that sells: a sample report
+## 4. The one artifact that sells: a sample report (DONE)
 
-Before applying, **produce one sample audit report**:
-1. Take a public repo (or one of your own demos) and plant a false claim —
-   e.g. a commit that says "added tests for X" but adds none, or a README that
-   claims a dependency you didn't add.
-2. Run Claim-Auditor; export the PASS/FAIL report (with the evidence lines).
-3. Redact/clean it into a 1-page PDF/HTML.
+Already built and live:
+**`https://liquitex-coder.github.io/services/sample-audit-report.html`**
+
+It's a *real* Claim-Auditor run on a demo repo with a deliberately planted
+false-claim commit — the tool caught (a) a commit claiming it added
+`tests/test_churn.py` when the diff added no such file, and (b) a "ruff: 0
+violations" claim contradicted by a real F401. Raw SARIF/JSON evidence is
+linked from the page.
 
 Attach it to the profile and link it in every proposal. "Here's exactly what
-you'd get" out-converts any amount of adjectives.
+you'd get" out-converts any amount of adjectives. To make a fresh one for a
+specific niche, repeat: plant a false claim in a repo → run Claim-Auditor →
+export the report.
 
 ## 5. Pricing ladder
 

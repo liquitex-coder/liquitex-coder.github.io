@@ -41,7 +41,7 @@ continue.
 Quick question: is the codebase [Python / TypeScript / mixed], and roughly how
 many files should I focus on first?
 
-— [Your name]  ·  example report: [link]
+— [Your name]  ·  example report: https://liquitex-coder.github.io/services/sample-audit-report.html
 ```
 
 ## Template B — "code review / QA / test coverage" gig
@@ -64,7 +64,7 @@ your choice.
 
 What's the repo's primary language and current test setup (if any)?
 
-— [Your name]  ·  what I do: [service page link]
+— [Your name]  ·  what I do: https://liquitex-coder.github.io/services/ai-code-audit.html
 ```
 
 ## Template C — "AI agent / LLM output is unreliable" gig
@@ -88,7 +88,7 @@ pipeline, in [3–4 days].
 
 What does your pipeline output, and what's the worst failure you've seen ship?
 
-— [Your name]  ·  background: [service page link]
+— [Your name]  ·  background: https://liquitex-coder.github.io/services/ai-code-audit.html
 ```
 
 ---
