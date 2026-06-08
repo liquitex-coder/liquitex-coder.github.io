@@ -134,6 +134,8 @@ img { max-width: 100%; display: block; }
 .svc-card p { color: var(--text-dim); font-size: 15px; }
 .svc-tags { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
 .svc-tags li { font-family: var(--font-mono); font-size: 12px; color: var(--accent-3); background: var(--surface-2); border: 1px solid var(--border); padding: 4px 10px; border-radius: 8px; }
+.svc-more { display: inline-block; margin-top: 18px; font-size: 14px; font-weight: 600; color: var(--accent); transition: transform .18s; }
+.svc-more:hover { transform: translateX(3px); }
 
 /* ---------- Work / Projects ---------- */
 .filter-bar { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 36px; }
