@@ -1,0 +1,108 @@
+{
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+  "runs": [
+    {
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "results": [
+        {
+          "fingerprints": {
+            "claim/contextual/v1": "9f3b66f357688b14899dcfc5d41e4c061f171b170b10dad859e8d0c4cff3a345",
+            "claim/v1": "dbfd070fca64eae7d63d32a8b88e633e426c954d034401382b5fb4f76db51b2e"
+          },
+          "level": "error",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/churn_model.py"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "`json` imported but unused"
+                  },
+                  "startLine": 5
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "[F401] `json` imported but unused"
+          },
+          "properties": {
+            "confidence": 1.0,
+            "detector_id": "ruff",
+            "regime": "unknown",
+            "tier": "syntactic"
+          },
+          "ruleId": "ruff_violation:F401"
+        },
+        {
+          "fingerprints": {
+            "claim/contextual/v1": "023d7c934f0d4fd2cdaef4a691e2b1e1796eb5fed5310ff9bb258eddc3b58d29",
+            "claim/v1": "f7d6563ece0b72f518385875356dbf8eda6be96f10df02196f6e613155b5d98f"
+          },
+          "level": "error",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "git:/commit/d73085baf413d5f5db5868ecf2b3626f23aa7cb5"
+                },
+                "region": {
+                  "snippet": {
+                    "text": "Add tests/test_churn.py"
+                  },
+                  "startLine": 1
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Commit d73085b: message says 'Add tests/test_churn.py' but tests/test_churn.py is not in the diff"
+          },
+          "properties": {
+            "confidence": 0.85,
+            "detector_id": "tier3.commit_message_reality",
+            "regime": "commit_audit",
+            "tier": "ethical"
+          },
+          "ruleId": "commit_message_mismatch:file_mention"
+        }
+      ],
+      "tool": {
+        "driver": {
+          "informationUri": "https://github.com/liquitex-coder/claim-auditor-core",
+          "name": "claim-auditor",
+          "rules": [
+            {
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "id": "commit_message_mismatch:file_mention",
+              "name": "commit_message_mismatch_file_mention",
+              "shortDescription": {
+                "text": "commit_message_mismatch:file_mention"
+              }
+            },
+            {
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "id": "ruff_violation:F401",
+              "name": "ruff_violation_F401",
+              "shortDescription": {
+                "text": "ruff_violation:F401"
+              }
+            }
+          ],
+          "version": "0.0.0"
+        }
+      }
+    }
+  ],
+  "version": "2.1.0"
+}
