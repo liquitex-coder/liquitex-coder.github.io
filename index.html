@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="meta.title">Liquitex — AI・機械学習・Web開発フリーランスエンジニア</title>
+  <meta name="description" data-i18n="meta.description" content="AI・機械学習・Web開発で、ビジネスの成果に直結するプロダクトを作るフリーランスエンジニア。LLMエージェント、需要予測・価格最適化、SaaS開発の実績。" />
+  <meta name="author" content="Liquitex" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Liquitex — AI・機械学習・Web開発エンジニア" />
+  <meta property="og:description" content="AI・機械学習・Web開発で、ビジネスの成果に直結するプロダクトを作るフリーランスエンジニア。" />
+  <meta property="og:url" content="https://liquitex-coder.github.io/" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- ===== Header / Nav ===== -->
+  <header class="site-header" id="top">
+    <div class="container nav">
+      <a href="#top" class="brand">
+        <span class="brand-mark">&lt;/&gt;</span>
+        <span class="brand-name">Liquitex</span>
+      </a>
+      <nav class="nav-links" aria-label="main">
+        <a href="#services" data-i18n="nav.services">サービス</a>
+        <a href="#work" data-i18n="nav.work">実績</a>
+        <a href="#skills" data-i18n="nav.skills">スキル</a>
+        <a href="#about" data-i18n="nav.about">プロフィール</a>
+        <a href="#contact" class="nav-cta" data-i18n="nav.contact">お問い合わせ</a>
+      </nav>
+      <div class="nav-tools">
+        <button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language">
+          <span class="lang-opt" data-lang="ja">JA</span>
+          <span class="lang-sep">/</span>
+          <span class="lang-opt" data-lang="en">EN</span>
+        </button>
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== Hero ===== -->
+    <section class="hero">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <p class="eyebrow" data-i18n="hero.eyebrow">フリーランスエンジニア / 受託開発</p>
+        <h1 class="hero-title" data-i18n="hero.title">
+          AI・機械学習・Web開発で、<br /><span class="grad">ビジネスの成果</span>に直結するプロダクトを。
+        </h1>
+        <p class="hero-sub" data-i18n="hero.sub">
+          LLMエージェント、需要予測・価格最適化、SaaS開発。アイデアから運用まで一気通貫で形にします。ROIを数字で示せる開発が強みです。
+        </p>
+        <div class="hero-cta">
+          <a href="#contact" class="btn btn-primary" data-i18n="hero.ctaPrimary">案件のご相談</a>
+          <a href="#work" class="btn btn-ghost" data-i18n="hero.ctaSecondary">実績を見る</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><span class="stat-num" data-i18n="hero.stat1Num">7+</span><span class="stat-label" data-i18n="hero.stat1Label">公開プロジェクト</span></div>
+          <div class="stat"><span class="stat-num" data-i18n="hero.stat2Num">3</span><span class="stat-label" data-i18n="hero.stat2Label">専門領域</span></div>
+          <div class="stat"><span class="stat-num" data-i18n="hero.stat3Num">JP/EN</span><span class="stat-label" data-i18n="hero.stat3Label">対応言語</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Services ===== -->
+    <section id="services" class="section">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-eyebrow" data-i18n="services.eyebrow">SERVICES</p>
+          <h2 class="section-title" data-i18n="services.title">提供できること</h2>
+          <p class="section-lead" data-i18n="services.lead">3つの専門領域で、課題の整理から実装・運用まで対応します。</p>
+        </div>
+        <div class="cards-3">
+          <article class="svc-card">
+            <div class="svc-icon">🤖</div>
+            <h3 data-i18n="services.s1Title">AI / LLM・自動化</h3>
+            <p data-i18n="services.s1Body">LLMエージェント、AI生成物の品質監査、社内業務の自動化。決定論的な検証で「動くだけ」でなく「信頼できる」AIを構築します。</p>
+            <ul class="svc-tags">
+              <li>LLM Agent</li><li>RAG</li><li>Claude / OpenAI</li><li data-i18n="services.s1Tag">業務自動化</li>
+            </ul>
+          </article>
+          <article class="svc-card">
+            <div class="svc-icon">📊</div>
+            <h3 data-i18n="services.s2Title">機械学習・データ分析</h3>
+            <p data-i18n="services.s2Body">需要予測、価格最適化、解約予測。SHAPによる説明可能性と、施策のROIを金額で示すダッシュボードまで一体で提供します。</p>
+            <ul class="svc-tags">
+              <li>LightGBM</li><li>SHAP</li><li data-i18n="services.s2Tag">需要予測</li><li data-i18n="services.s2Tag2">最適化</li>
+            </ul>
+          </article>
+          <article class="svc-card">
+            <div class="svc-icon">🌐</div>
+            <h3 data-i18n="services.s3Title">Web / SaaS・受託開発</h3>
+            <p data-i18n="services.s3Body">フルスタックWebアプリ、SaaSプロトタイプ、静的サイト。PoCから本番運用まで、要件定義を起点に着実に形にします。</p>
+            <ul class="svc-tags">
+              <li>Python / TS</li><li>FastAPI</li><li>Docker</li><li data-i18n="services.s3Tag">SaaS</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Work / Projects ===== -->
+    <section id="work" class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-eyebrow" data-i18n="work.eyebrow">SELECTED WORK</p>
+          <h2 class="section-title" data-i18n="work.title">実績・プロジェクト</h2>
+          <p class="section-lead" data-i18n="work.lead">いずれもソースコード公開・実行可能。クリックでGitHubリポジトリへ。</p>
+        </div>
+        <div class="filter-bar" id="filterBar">
+          <button class="filter-btn active" data-filter="all" data-i18n="work.filterAll">すべて</button>
+          <button class="filter-btn" data-filter="ai" data-i18n="work.filterAI">AI / LLM</button>
+          <button class="filter-btn" data-filter="ml" data-i18n="work.filterML">機械学習</button>
+          <button class="filter-btn" data-filter="web" data-i18n="work.filterWeb">Web / SaaS</button>
+        </div>
+        <div class="cards-grid" id="projectGrid"><!-- rendered by js/projects.js --></div>
+      </div>
+    </section>
+
+    <!-- ===== Skills ===== -->
+    <section id="skills" class="section">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-eyebrow" data-i18n="skills.eyebrow">TECH STACK</p>
+          <h2 class="section-title" data-i18n="skills.title">技術スタック</h2>
+        </div>
+        <div class="skills-grid">
+          <div class="skill-group">
+            <h3 data-i18n="skills.g1">言語</h3>
+            <ul><li>Python</li><li>TypeScript / JavaScript</li><li>SQL</li><li>MQL5</li></ul>
+          </div>
+          <div class="skill-group">
+            <h3 data-i18n="skills.g2">AI / ML</h3>
+            <ul><li>LLM / Agents</li><li>LightGBM</li><li>SHAP</li><li>scikit-learn</li><li>MediaPipe</li></ul>
+          </div>
+          <div class="skill-group">
+            <h3 data-i18n="skills.g3">Web / バックエンド</h3>
+            <ul><li>FastAPI</li><li>Streamlit</li><li>Docker</li><li>DuckDB</li><li>静的サイト</li></ul>
+          </div>
+          <div class="skill-group">
+            <h3 data-i18n="skills.g4">領域・その他</h3>
+            <ul><li data-i18n="skills.fx">自動売買EA開発</li><li data-i18n="skills.opt">数理最適化 (PuLP)</li><li>CI / GitHub Actions</li><li data-i18n="skills.audit">AI品質監査</li></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== About ===== -->
+    <section id="about" class="section section-alt">
+      <div class="container about-inner">
+        <div class="about-text">
+          <p class="section-eyebrow" data-i18n="about.eyebrow">ABOUT</p>
+          <h2 class="section-title" data-i18n="about.title">プロフィール</h2>
+          <p data-i18n="about.p1">AI・機械学習・Web開発を軸に活動するフリーランスエンジニアです。単に動くものを作るのではなく、<strong>ビジネス上の成果（ROI・工数削減・信頼性）</strong>に結びつくプロダクトづくりを大切にしています。</p>
+          <p data-i18n="about.p2">特に、AIが「やったと主張すること」と「実際にやったこと」の差分を決定論的に検証する仕組み（Claim-Auditor）など、<strong>品質と再現性</strong>に踏み込んだ開発を得意とします。日本語・英語の両方で要件定義から納品まで対応可能です。</p>
+          <div class="about-points">
+            <div class="point"><span class="point-mark">✓</span><span data-i18n="about.point1">要件定義（署名要件A／受け入れ定義B）を起点にした堅実な開発</span></div>
+            <div class="point"><span class="point-mark">✓</span><span data-i18n="about.point2">git clone 後すぐ動く・再現可能なデモを重視</span></div>
+            <div class="point"><span class="point-mark">✓</span><span data-i18n="about.point3">日英バイリンガル対応・リモート完結</span></div>
+          </div>
+        </div>
+        <aside class="about-card">
+          <h3 data-i18n="about.flowTitle">ご依頼の流れ</h3>
+          <ol class="flow">
+            <li><span class="flow-step">1</span><div><strong data-i18n="about.flow1t">ご相談</strong><p data-i18n="about.flow1b">課題・ご予算・納期をお聞かせください。</p></div></li>
+            <li><span class="flow-step">2</span><div><strong data-i18n="about.flow2t">要件定義・お見積</strong><p data-i18n="about.flow2b">実現範囲を整理し、見積をご提示。</p></div></li>
+            <li><span class="flow-step">3</span><div><strong data-i18n="about.flow3t">開発・納品</strong><p data-i18n="about.flow3b">進捗を共有しながら反復的に開発。</p></div></li>
+          </ol>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ===== Contact ===== -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-eyebrow" data-i18n="contact.eyebrow">CONTACT</p>
+          <h2 class="section-title" data-i18n="contact.title">お問い合わせ</h2>
+          <p class="section-lead" data-i18n="contact.lead">案件のご相談・お見積もりはお気軽にどうぞ。通常2営業日以内に返信します。</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-direct">
+            <a class="contact-link" href="mailto:liquitex@gmail.com">
+              <span class="contact-ic">✉️</span>
+              <span><strong>Email</strong><br />liquitex@gmail.com</span>
+            </a>
+            <a class="contact-link" href="https://github.com/liquitex-coder" target="_blank" rel="noopener">
+              <span class="contact-ic">🐙</span>
+              <span><strong>GitHub</strong><br />@liquitex-coder</span>
+            </a>
+          </div>
+          <!-- Formspree form. 使い方: https://formspree.io で無料登録し、発行された
+               フォームID (例: xqkzabcd) を下の action の YOUR_FORM_ID と差し替えてください。
+               未設定の場合は自動でメールクライアントが開くフォールバックが働きます。 -->
+          <form class="contact-form" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <div class="field">
+              <label for="name" data-i18n="contact.name">お名前</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+            <div class="field">
+              <label for="email" data-i18n="contact.email">メールアドレス</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div class="field">
+              <label for="message" data-i18n="contact.message">ご相談内容</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block" data-i18n="contact.send">送信する</button>
+            <p class="form-note" id="formNote" data-i18n="contact.note"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span class="brand"><span class="brand-mark">&lt;/&gt;</span><span class="brand-name">Liquitex</span></span>
+      <p class="copyright">© <span id="year"></span> Liquitex. All rights reserved.</p>
+      <a href="#top" class="to-top" data-i18n="footer.top">↑ TOP</a>
+    </div>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/projects.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
