@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Code Audit & Verification — Liquitex</title>
+  <meta name="description" content="Does your AI-generated code actually do what it claims? I run a deterministic, LLM-free auditor that catches the gap between what a change claims and what the diff actually shows — plus tests and CI so it can't regress." />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="AI Code Audit & Verification — Liquitex" />
+  <meta property="og:description" content="I catch the gap between what your AI said it did and what it actually did — deterministically." />
+  <meta property="og:url" content="https://liquitex-coder.github.io/services/ai-code-audit.html" />
+
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    /* page-specific helpers layered on top of the shared design system */
+    body { font-family: var(--font-en); }
+    .lead-narrow { max-width: 720px; }
+    .problem-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 8px; }
+    .problem-item { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 18px 20px; }
+    .problem-item .x { color: #ff8a8a; font-weight: 800; margin-right: 8px; }
+    .deliver-list { list-style: none; display: flex; flex-direction: column; gap: 14px; max-width: 760px; margin: 0 auto; }
+    .deliver-list li { display: flex; gap: 12px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 16px 20px; }
+    .deliver-list .ok { color: var(--accent-3); font-weight: 800; }
+    .price-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .price-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px 24px; text-align: center; }
+    .price-card.featured { border-color: var(--accent); box-shadow: 0 10px 34px rgba(91,140,255,.22); }
+    .price-card h3 { font-size: 17px; margin-bottom: 8px; }
+    .price-amt { font-size: 30px; font-weight: 800; background: var(--grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .price-card p { color: var(--text-dim); font-size: 14px; margin-top: 10px; }
+    .price-tag { display: inline-block; font-family: var(--font-mono); font-size: 11px; color: var(--accent-3); border: 1px solid var(--border); border-radius: 999px; padding: 3px 10px; margin-bottom: 12px; }
+    .back-link { font-family: var(--font-mono); font-size: 13px; color: var(--text-dim); }
+    .back-link:hover { color: var(--accent); }
+    @media (max-width: 720px) { .problem-list, .price-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body data-lang="en">
+  <header class="site-header">
+    <div class="container nav">
+      <a href="../index.html" class="brand">
+        <span class="brand-mark">&lt;/&gt;</span><span class="brand-name">Liquitex</span>
+      </a>
+      <nav class="nav-links" aria-label="main">
+        <a href="#deliver">What you get</a>
+        <a href="#process">Process</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact" class="nav-cta">Get a free look</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <p class="eyebrow">AI CODE AUDIT &amp; VERIFICATION</p>
+        <h1 class="hero-title">Your AI wrote the code.<br /><span class="grad">Does it do what it claims?</span></h1>
+        <p class="hero-sub lead-narrow">
+          Commit messages say "added tests." The PR says "0 lint errors." The README claims a feature.
+          Usually nobody checks — deterministically. I do. I run an LLM-free auditor I built that proves
+          the gap between what a change <em>claims</em> and what the diff <em>actually shows</em>.
+        </p>
+        <div class="hero-cta">
+          <a href="#contact" class="btn btn-primary">Get a free first look</a>
+          <a href="https://github.com/liquitex-coder/Claim-Auditor" target="_blank" rel="noopener" class="btn btn-ghost">See Claim-Auditor →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Problem -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-eyebrow">THE PROBLEM</p>
+          <h2 class="section-title">Linters check if the code is correct.<br />Nobody checks if the claims are true.</h2>
+          <p class="section-lead lead-narrow" style="margin-inline:auto;">These are the failures a normal review and your CI never catch — the gap an AI (or a rushed dev) leaves behind:</p>
+        </div>
+        <div class="problem-list">
+          <div class="problem-item"><span class="x">✗</span>"Added tests for X" — but the diff adds none, or weakens existing assertions.</div>
+          <div class="problem-item"><span class="x">✗</span>The implementation quietly drifted away from the spec it was supposed to follow.</div>
+          <div class="problem-item"><span class="x">✗</span>A commit/PR/README claims a dependency or change that the manifest/diff doesn't support.</div>
+          <div class="problem-item"><span class="x">✗</span>A design that was supposed to be discarded got silently resurrected.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What you get -->
+    <section id="deliver" class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-eyebrow">WHAT YOU GET</p>
+          <h2 class="section-title">One trustworthy verdict — with evidence</h2>
+        </div>
+        <ul class="deliver-list">
+          <li><span class="ok">✓</span><span><strong>A PASS/FAIL audit report</strong> with the exact evidence line for every finding — no vibes, no "looks fine to me."</span></li>
+          <li><span class="ok">✓</span><span><strong>Your existing linters, unified.</strong> ruff, mypy, bandit, eslint, semgrep, trivy… normalized into one SARIF report instead of ten dashboards.</span></li>
+          <li><span class="ok">✓</span><span><strong>A prioritized fix list</strong> (or applied fixes / a PR) with effort estimates, so you know what to do next.</span></li>
+          <li><span class="ok">✓</span><span><strong>A CI gate</strong> (GitHub Actions) so the same class of problem can't come back silently on the next change.</span></li>
+          <li><span class="ok">✓</span><span><strong>A 3-bullet plain-English summary</strong> for non-engineers: what was wrong, and what it could have cost you.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section id="process" class="section">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-eyebrow">PROCESS</p>
+          <h2 class="section-title">From repo to verdict in days</h2>
+        </div>
+        <div class="cards-3">
+          <article class="svc-card"><div class="svc-icon">1️⃣</div><h3>Free first look</h3><p>Send me the repo (or a redacted sample). I tell you the first thing I'd audit and where the risk is — no commitment.</p></article>
+          <article class="svc-card"><div class="svc-icon">2️⃣</div><h3>Fixed-scope audit</h3><p>I run the deterministic audit on the agreed scope and deliver the PASS/FAIL report with evidence and a fix list.</p></article>
+          <article class="svc-card"><div class="svc-icon">3️⃣</div><h3>Fix &amp; gate</h3><p>I apply the priority fixes and add a CI gate, so trust in the codebase is restored and stays that way.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-eyebrow">PRICING</p>
+          <h2 class="section-title">Start small, low risk</h2>
+          <p class="section-lead">Begin with a fixed, fast audit. If it's not useful, you don't continue.</p>
+        </div>
+        <div class="price-grid">
+          <div class="price-card">
+            <span class="price-tag">START HERE</span>
+            <h3>Audit Sprint</h3>
+            <div class="price-amt">$200</div>
+            <p>One module of your choice. PASS/FAIL report + top fixes, delivered in ~3 days.</p>
+          </div>
+          <div class="price-card featured">
+            <span class="price-tag">MOST POPULAR</span>
+            <h3>Full Audit + Fixes</h3>
+            <div class="price-amt">from $90/hr</div>
+            <p>Whole codebase audit, applied fixes, and a CI gate so issues can't regress.</p>
+          </div>
+          <div class="price-card">
+            <span class="price-tag">ONGOING</span>
+            <h3>Per-PR Retainer</h3>
+            <div class="price-amt">Custom</div>
+            <p>Every pull request audited before merge. Trust as a continuous guarantee.</p>
+          </div>
+        </div>
+        <p class="section-lead" style="text-align:center;margin-top:22px;font-size:14px;">Rates shown are indicative — final scope and price agreed up front, in writing.</p>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-eyebrow">CONTACT</p>
+          <h2 class="section-title">Get a free first look</h2>
+          <p class="section-lead">Send your repo or a redacted sample. I'll reply within 2 business days with the first thing I'd audit — no commitment.</p>
+        </div>
+        <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+          <a class="btn btn-primary" href="mailto:liquitex@gmail.com?subject=AI%20Code%20Audit%20inquiry">Email liquitex@gmail.com</a>
+          <a class="btn btn-ghost" href="https://github.com/liquitex-coder" target="_blank" rel="noopener">GitHub @liquitex-coder</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a href="../index.html" class="back-link">← Back to portfolio</a>
+      <p class="copyright">© <span id="year"></span> Liquitex. All rights reserved.</p>
+      <a href="#top" class="to-top">↑ TOP</a>
+    </div>
+  </footer>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
